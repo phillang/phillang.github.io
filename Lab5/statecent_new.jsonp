@@ -1,4 +1,4 @@
-onLoadData()
+onLoadData(
 {
 "type": "FeatureCollection",
 "name": "statecent_new",
