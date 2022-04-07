@@ -1,4 +1,5 @@
-{
+var nebrews = [
+  {
 "type": "FeatureCollection",
 "name": "nebrews",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
@@ -51,3 +52,4 @@
 { "type": "Feature", "properties": { "name": "Jaipur Restaurant and Brewpub", "latitude": 41.23, "longitude": -96.08, "time": "12/22/2021", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -96.08, 41.23 ] } }
 ]
 }
+  ]
