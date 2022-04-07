@@ -1,9 +1,5 @@
 var nebrews = [
-  {
-"type": "FeatureCollection",
-"name": "nebrews",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
+
 { "type": "Feature", "properties": { "name": "Empyrean Brewing Company", "latitude": 40.82, "longitude": -96.71, "time": "3/20/1991", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -96.71, 40.82 ] } },
 { "type": "Feature", "properties": { "name": "Gottberg Brewery", "latitude": 41.43, "longitude": -97.36, "time": "1/1/1995", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -97.36, 41.43 ] } },
 { "type": "Feature", "properties": { "name": "Upstream Brewing Company", "latitude": 41.26, "longitude": -95.93, "time": "1/1/1996", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -95.93, 41.26 ] } },
@@ -50,6 +46,4 @@ var nebrews = [
 { "type": "Feature", "properties": { "name": "Stone Hollow Brewing Co.", "latitude": 40.27, "longitude": -96.75, "time": "3/1/2019", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -96.75, 40.27 ] } },
 { "type": "Feature", "properties": { "name": "Divots", "latitude": 42.03, "longitude": -97.48, "time": "3/1/2020", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -97.48, 42.03 ] } },
 { "type": "Feature", "properties": { "name": "Jaipur Restaurant and Brewpub", "latitude": 41.23, "longitude": -96.08, "time": "12/22/2021", "status": "Open" }, "geometry": { "type": "Point", "coordinates": [ -96.08, 41.23 ] } }
-]
-}
   ]
