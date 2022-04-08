@@ -1,3 +1,4 @@
+var chipotle = [
 {
 "type": "FeatureCollection",
 "name": "TxChipotle",
@@ -231,3 +232,4 @@
 { "type": "Feature", "properties": { "state": "Texas", "location": "Wichita Falls", "address": "3910 Wayne Ave Ste 100 Wichita Falls, TX 76308 US", "latitude": 33.87089248, "longitude": -98.53422405000001 }, "geometry": { "type": "Point", "coordinates": [ -98.53422405, 33.87089248 ] } }
 ]
 }
+  ]
