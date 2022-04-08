@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title> Phillips Lab 8 | D3</title>
+
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+  <script src="https://phillang.github.io/Lab8/LnkStreets.js"></script>
+  <script src="https://phillang.github.io/Lab8/LincolnPlaces.js"></script>
+
+  <style>
+  body{
+    position: absolute;
+    font-family: "Proxima Nova", "Montserrat", sans-serif;
+  }
+  h1, h2 {
+    position: absolute;
+    background: white;
+    left: 10px;
+    font-size: 1.3em;
+    font-weight: 100;
+  }
+  h2 {
+    top: 30px;
+    font-size: 1em;
+  }
+  .hover{
+    fill: yellow;
+  }
+
+  </style>
+
+  </head>
+  <body>
+    <h1>Entertainment in Lincoln</h1>
+    <h2></h2>
+  <script>
+
+    var height=600;
+    var width=1000;
+    var lowColor='#FFD0D0'
+    var highColor='#FF0000'
+    var minVal=0
+    var maxVal=1
+
+
+    var ramp = d3.scaleLinear().domain([minVal,maxVal]).range([lowColor,highColor]);
+
+    var svg=d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+    var g = svg.append( "g" );
+
+    var albersProjection=d3.geoAlbers()
+    .scale(2850000)
+    .rotate([96.70682,0])
+    .center([0,40.81507])
+    .translate([width/2,height/2]);
+
+    var geoPath=d3.geoPath()
+    .projection( albersProjection );
+
+    g.selectAll("path")
+    .data(streets.features)
+    .enter()
+    .append("path")
+    .attr("fill", "#ccc")
+    .attr("stroke", "#333")
+    .attr("d", geoPath);
+
+    var lnk_json=svg.append("g");
+
+    lnk_json.selectAll()
+      .data(lnkplace.features)
+      .enter()
+      .append("path")
+      .attr("fill", function(d) {return ramp(d.properties.Distance)})
+      .attr("stroke", "#999")
+      .attr("d", geoPath)
+      .attr("class","buildingdata")
+      .on("mouseover", function(d){
+        d3.select("h2").text(d.properties.Distance + " miles away from the downtown Embassy Suites Hotel");
+        d3.select(this).attr("class","buildingdata hover");
+      })
+      .on("mouseout", function(d){
+        d3.select("h2").text(" ");
+        d3.select(this).attr("class","buildingdata");
+      });</script>
+
+  </body>
+</html>
